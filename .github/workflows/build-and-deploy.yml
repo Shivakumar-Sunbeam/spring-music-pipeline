@@ -30,7 +30,7 @@ jobs:
       run: ./gradlew build
     - name: Run Commands
       run: |
-        ls -al
+        ls -al ./build/libs
     
     - uses: actions/upload-artifact@v2
       with:
