@@ -17,6 +17,7 @@ jobs:
         name: springmusic
     - name: Run Commands
       run: |
+        ls -al
         ls -al /home/runner/work/spring-music-pipeline/spring-music-pipeline
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
