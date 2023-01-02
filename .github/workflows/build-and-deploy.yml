@@ -23,18 +23,11 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: springmusic
-        path: /tmp/spring-music-1.0.jar
-    - name: Display structure of downloaded files
-      run: ls -R /tmp
-      working-directory: path/to/artifact
-    - name: run commands
-      run: |
-       ls -al /tmp
+        path: /tmp
     - name: Build and push
-      uses: docker/build-push-action@v3
-      with:
-        push: true
-        tags: dshivakumar/springmusicapp:latest
+      run: | 
+        docker build -t dshivakumar/springmyapp:v1 .
+        docker push dshivakumar/springmyapp:v1
   compile:
     runs-on: ubuntu-latest
     steps:
