@@ -15,6 +15,9 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: springmusic
+    - name: Run Commands
+      run: |
+        ls -al 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
