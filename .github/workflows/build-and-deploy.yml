@@ -24,6 +24,9 @@ jobs:
       with:
         name: springmusic
         path: /tmp
+    - name: run commands
+      run: |
+       ls -al /tmp
     - name: Build and push
       uses: docker/build-push-action@v3
       with:
