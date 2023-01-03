@@ -31,9 +31,10 @@ jobs:
       run: |
         ls -al ./japp
     - name: Build and push
-      run: | 
-        docker build -t dshivakumar/springmyapp:v1 .
-        docker push dshivakumar/springmyapp:v1
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: dshivakumar/japp:latest
   compile:
     runs-on: ubuntu-latest
     steps:
