@@ -20,6 +20,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: create directory 
       run: |
         mkdir ./japp
@@ -27,8 +29,6 @@ jobs:
       with:
         name: springmusic
         path: ./japp/
-    - name: Checkout
-      uses: actions/checkout@v2
     - name: validate downloaded file 
       run: |
         ls -al
