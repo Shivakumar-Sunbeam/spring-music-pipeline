@@ -27,12 +27,17 @@ jobs:
       with:
         name: springmusic
         path: ./japp/
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: validate downloaded file 
       run: |
+        ls -al
         ls -al ./japp
     - name: Build and push
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v2
       with:
+        context: .
+        file: ./Dockerfile
         push: true
         tags: dshivakumar/japp:latest
   compile:
